@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\AdminHomeController;
+use App\Http\Controllers\guest\GuestHomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,15 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Guest Routes
-Route::get('/', function () {
-    return view('guest.home');
-})->name('guest.home');
+Route::get('/', [GuestHomeController::class, 'index'])->name('guest.home');
 
 
 // Admin Routes
-Route::get('/admin', function () {
-    return view('admin.home');
-})->middleware(['auth', 'verified'])->name('admin.home');
+Route::prefix('/admin')->middleware(['auth', 'verified'])->name('admin.')->group(function () {
+
+    Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+});
 
 
 // Profile Routes
