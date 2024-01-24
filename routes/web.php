@@ -14,18 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Guest Routes
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('guest.home');
+})->name('guest.home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
+// Admin Routes
+Route::get('/admin', function () {
+    return view('admin.home');
+})->middleware(['auth', 'verified'])->name('admin.home');
+
+
+// Profile Routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+// Auth Routes
+require __DIR__ . '/auth.php';
