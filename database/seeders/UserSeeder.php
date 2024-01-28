@@ -26,7 +26,8 @@ class UserSeeder extends Seeder
 
             // Create Doctor
             $doctor = new User();
-            $doctor->name = $faker->name();
+            $doctor->first_name = $faker->firstName();
+            $doctor->last_name = $faker->lastName();
             $doctor->email = "doctor$i@mail.it";
             $doctor->password = bcrypt('password');
             $doctor->save();

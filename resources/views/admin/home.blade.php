@@ -19,7 +19,7 @@
 
                     {{-- Card Body --}}
                     <div class="profile-card-body px-3 mb-3">
-                        <h2>{{ $doctor->name }}</h2>
+                        <h2>{{ $doctor->getFullName() }}</h2>
                         <p>{{ $doctor->profile->address }}</p>
                         <p>{{ $doctor->profile->description }}</p>
 
