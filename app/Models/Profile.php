@@ -34,4 +34,11 @@ class Profile extends Model
     {
         return $this->belongsToMany(Typology::class);
     }
+
+
+    //*** UTILITIES ***//
+    public function getPhotoPath()
+    {
+        return asset("storage/$this->photo");
+    }
 }
