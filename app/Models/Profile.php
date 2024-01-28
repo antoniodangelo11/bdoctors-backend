@@ -10,7 +10,7 @@ class Profile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'descriprion',
+        'description',
         'services',
         'address',
         'photo',
@@ -18,8 +18,20 @@ class Profile extends Model
         'user_id'
     ];
 
+    //*** RELATIONS ***//
+    /**
+     * User Relation
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Typologies Relation
+     */
+    public function typologies()
+    {
+        return $this->belongsToMany(Typology::class);
     }
 }

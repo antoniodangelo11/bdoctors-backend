@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\admin\AdminHomeController;
 use App\Http\Controllers\guest\GuestHomeController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
