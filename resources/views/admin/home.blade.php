@@ -15,7 +15,8 @@
                     </div>
 
                     {{-- Profile Photo --}}
-                    <img src="{{ asset('img/profile-placeholder.png') }}" alt="Profile Photo" class="profile-card-photo">
+                    <img src="{{ $doctor->profile->photo ? $doctor->profile->getPhotoPath() : asset('img/profile-placeholder.png') }}"
+                        alt="Profile Photo" class="profile-card-photo">
 
                     {{-- Card Body --}}
                     <div class="profile-card-body px-3 mb-3">
