@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->text('descriprion');
-            $table->text('services');
+            $table->text('descriprion')->nullable();
+            $table->text('services')->nullable();
             $table->string('address');
             $table->string('photo', 255)->nullable();
             $table->boolean('visible')->default(true);
