@@ -1,1 +1,6 @@
-@import '~bootstrap/scss/bootstrap'
+//*** BOOTSTRAP ***//
+@use '~bootstrap/scss/bootstrap';
+
+
+//*** COMPONENTS ***//
+@use '~resources/scss/components/profile-card';
