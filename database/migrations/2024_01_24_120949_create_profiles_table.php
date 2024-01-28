@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 return new class extends Migration
 {
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->text('services')->nullable();
             $table->string('address');
             $table->string('photo', 255)->nullable();
-            $table->boolean('visible')->default(true);
+            $table->boolean('is_visible')->default(false);
             $table->timestamps();
         });
     }
@@ -32,5 +33,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('profiles');
+        Storage::deleteDirectory('profile_img');
     }
 };
