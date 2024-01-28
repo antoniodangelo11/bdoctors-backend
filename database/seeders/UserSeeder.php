@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             // Create profile
             $doctor_profile = new Profile();
             $doctor_profile->user_id = $doctor->id;
-            $doctor_profile->descriprion = $faker->sentence();
+            $doctor_profile->description = $faker->sentence();
             $doctor_profile->services = $faker->words(rand(1, 5), true);
             $doctor_profile->address = 'Roma';
             $doctor_profile->save();
