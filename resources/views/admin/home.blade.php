@@ -7,7 +7,7 @@
         <div class="row">
 
             {{-- Main Column --}}
-            <div class="col-9">
+            <div class="col-12 col-md-7 col-lg-9 mb-3">
                 <div class="card profile-card bg-white pb-3">
 
                     {{-- Profile Banner --}}
@@ -34,7 +34,7 @@
             </div>
 
             {{-- Details Column --}}
-            <div class="col-3">
+            <div class="col-12 col-md-5 col-lg-3">
                 <div class="card bg-white p-2">
                     <h4>Specializzazioni</h4>
                     <ul>
