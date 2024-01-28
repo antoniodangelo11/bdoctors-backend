@@ -2,10 +2,6 @@
 
 @section('content')
     <section class="container bg-light py-4">
-        {{-- Title --}}
-        <h2 class="fs-4 text-secondary my-4">
-            {{ __('Dashboard') }}
-        </h2>
 
         {{-- Content --}}
         <div class="row">
