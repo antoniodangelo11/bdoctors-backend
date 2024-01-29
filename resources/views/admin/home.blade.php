@@ -28,7 +28,7 @@
 
                     {{-- Card Actions --}}
                     <div class="px-3">
-                        <a href="#" class="btn btn-outline-primary">Edita Profilo</a>
+                        <a href="{{ url('profile') }}" class="btn btn-outline-primary">Edita Profilo</a>
                     </div>
 
                 </div>
