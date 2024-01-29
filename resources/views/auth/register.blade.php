@@ -206,20 +206,42 @@
 
 
                             {{-- Photo --}}
-                            <div class="mb-4">
-                                <label for="photo" class="col-md-4 col-form-label text-md-right">
-                                    {{ __('Photo') }}
-                                </label>
+                            <div class="row file-uploader mb-4">
 
-                                {{-- Input for add image --}}
-                                <input type="file" class="form-control @error('photo') is-invalid @enderror"
-                                    id="photo" name="photo">
+                                {{-- # Add file --}}
+                                <div class="col-12 col-sm-8 col-lg-10 mb-3">
 
-                                @error('photo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    <label for="photo" class="form-label fs-5">Photo</label>
+
+                                    {{-- Button for change photo --}}
+                                    <div class="input-group file-change d-none">
+                                        <button class="btn btn-outline-secondary" type="button">Change Photo</button>
+                                        <input type="text" class="form-control" disabled>
+                                    </div>
+
+                                    {{-- Input for add photo --}}
+                                    <input type="file"
+                                        class="form-control file-input @error('photo') is-invalid @enderror"
+                                        id="photo" name="photo">
+
+                                    @error('photo')
+                                        <span class="invalid-feedback error-message"
+                                            role="alert">{{ $message }}</span>
+                                    @enderror
+                                    <span id="photo-error" class="error-message"></span>
+
+                                    {{-- Button for remove photo --}}
+                                    <button class="btn btn-danger mt-3 file-remove d-none" type="button">Remove
+                                        Photo</button>
+                                    <input type="checkbox" class="d-none file-delete" name="delete_photo"
+                                        value="1">
+                                </div>
+
+                                {{-- # Preview --}}
+                                <div class="col-12 col-sm-4 col-lg-2">
+                                    <img src="/img/profile-placeholder.png" alt="preview"
+                                        class="img-fluid image-preview">
+                                </div>
 
                             </div>
 
@@ -240,4 +262,8 @@
 
 
     </section>
+@endsection
+
+@section('scripts')
+    @vite(['resources/js/file-uploader.js'])
 @endsection
