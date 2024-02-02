@@ -25,7 +25,7 @@ class RegisteredUserController extends Controller
     public function create(): View
     {
 
-        $typologies = Typology::all();
+        $typologies = Typology::orderBy('name')->get();
 
         return view('auth.register', compact('typologies'));
     }
