@@ -21,7 +21,7 @@
 
         {{-- First Name --}}
         <div class="mb-2">
-            <label for="first_name">{{ __('First Name') }}</label>
+            <label for="first_name">{{ __('First Name') }}<span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="first_name" id="first_name" autocomplete="name"
                 value="{{ old('first_name', $user->first_name) }}" required autofocus>
             @error('first_name')
@@ -34,7 +34,7 @@
 
         {{-- Last Name --}}
         <div class="mb-2">
-            <label for="last_name">{{ __('Last Name') }}</label>
+            <label for="last_name">{{ __('Last Name') }}<span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="last_name" id="last_name" autocomplete="name"
                 value="{{ old('last_name', $user->last_name) }}" required>
             @error('last_name')
@@ -49,6 +49,7 @@
         <div class="mb-2">
             <label for="email">
                 {{ __('Email') }}
+                <span class="text-danger">*</span>
             </label>
 
             <input id="email" name="email" type="email" class="form-control"
@@ -82,7 +83,7 @@
 
         {{-- Address --}}
         <div class="mb-2">
-            <label for="address">{{ __('Address') }}</label>
+            <label for="address">{{ __('Address') }}<span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="address" id="address" autocomplete="address-level1"
                 value="{{ old('address', $user->profile->address) }}" required>
             @error('address')
@@ -95,7 +96,7 @@
 
         {{-- Typologies --}}
         <div class="mb-2">
-            <label for="typologies">{{ __('Typologies') }}</label>
+            <label for="typologies">{{ __('Typologies') }}<span class="text-danger">*</span></label>
             <div class="border rounded p-1 @error('typologies') border-danger @enderror">
                 <div class="row">
                     @foreach ($typologies as $typology)
