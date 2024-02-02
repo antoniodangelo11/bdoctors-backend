@@ -9,6 +9,7 @@ use Faker\Generator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 class UserSeeder extends Seeder
 {
@@ -22,11 +23,15 @@ class UserSeeder extends Seeder
         // Retrieve typologies ids
         $typologies_ids = Typology::pluck('id')->toArray();
 
+        // Make profile photo directory
+        Storage::makeDirectory('profile_img');
+
         for ($i = 1; $i < 10; $i++) {
 
             // Create Doctor
             $doctor = new User();
-            $doctor->name = $faker->name();
+            $doctor->first_name = $faker->firstName();
+            $doctor->last_name = $faker->lastName();
             $doctor->email = "doctor$i@mail.it";
             $doctor->password = bcrypt('password');
             $doctor->save();
