@@ -143,16 +143,19 @@
                                 </p>
 
                                 <div class="border rounded p-1 @error('typologies') border-danger @enderror">
-                                    @foreach ($typologies as $typology)
-                                        <div class="d-inline-block">
-                                            <input class="form-check-input" type="checkbox"
-                                                @if (in_array($typology->id, old('typologies', []))) checked @endif
-                                                id="typology-{{ $typology->id }}" value="{{ $typology->id }}"
-                                                name="typologies[]">
-                                            <label class="form-check-label me-3"
-                                                for="typology-{{ $typology->id }}">{{ $typology->name }}</label>
-                                        </div>
-                                    @endforeach
+                                    <div class="row">
+                                        @foreach ($typologies as $typology)
+                                            <div class="col-6 col-lg-4 d-flex gap-2 mb-2">
+                                                <input class="form-check-input" type="checkbox"
+                                                    @if (in_array($typology->id, old('typologies', []))) checked @endif
+                                                    id="typology-{{ $typology->id }}" value="{{ $typology->id }}"
+                                                    name="typologies[]">
+                                                <label class="form-check-label me-3"
+                                                    for="typology-{{ $typology->id }}">{{ $typology->name }}</label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
                                 </div>
 
                                 @error('typologies')
