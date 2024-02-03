@@ -20,32 +20,31 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- Fix Style Loading --}}
+    <style>
+        body {
+            display: none;
+        }
+    </style>
+
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
 </head>
 
 <body>
     <div id="app">
 
+        {{-- Main Header --}}
         @include('includes.header')
 
         <div class="app-wrapper">
 
-            <nav class="app-sidebar">
-                <ul class="app-sidebar-menu">
-                    <li>
-                        <a href="{{ route('guest.home') }}">
-                            <i class="fas fa-home fa-lg fa-fw"></i>
-                            <span class="fw-bold ms-1">{{ __('Home') }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            {{-- Sidebar --}}
+            @include('includes.sidebar')
 
-            {{-- MAin content --}}
+            {{-- Main content --}}
             <main class="app-main bg-light">
-                {{-- Main Header --}}
-
                 @yield('content')
             </main>
         </div>
