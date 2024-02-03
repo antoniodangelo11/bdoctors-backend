@@ -10,7 +10,7 @@
 
 
             <!-- Login Menu -->
-            <ul class="ms-auto">
+            <ul class="d-flex gap-2 ms-auto">
 
                 <!-- Authentication Links -->
                 @guest
