@@ -5,4 +5,11 @@
 
 .app-header {
     height: $header-height;
+
+    border-bottom: 1px solid $col-gray-500;
+
+    .container-fluid {
+        display: flex;
+        align-items: center;
+    }
 }
