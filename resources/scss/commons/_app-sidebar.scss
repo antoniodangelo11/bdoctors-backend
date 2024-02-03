@@ -7,11 +7,8 @@
 .app-sidebar {
     flex: 0 0 $sidebar-width;
     height: calc(100vh - $header-height);
+    padding: 0.75rem;
 
-    background-color: red;
-
-    &-menu {
-        margin: 0;
-        padding: 0;
-    }
+    background-color: $col-light;
+    border-right: 1px solid $col-gray-500;
 }

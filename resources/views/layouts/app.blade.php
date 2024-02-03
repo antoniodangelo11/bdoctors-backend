@@ -34,7 +34,10 @@
             <nav class="app-sidebar">
                 <ul class="app-sidebar-menu">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="{{ route('guest.home') }}">
+                            <i class="fas fa-home fa-lg fa-fw"></i>
+                            <span class="fw-bold ms-1">{{ __('Home') }}</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
