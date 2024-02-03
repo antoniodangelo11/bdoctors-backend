@@ -1,7 +1,11 @@
 /* -----------------------------------------
 * APP MAIN
 -------------------------------------------*/
+@use '../vars' as *;
 
 .app-main {
-    flex: 1 0 auto;
+    flex-grow: 1;
+    height: calc(100vh - $header-height);
+
+    overflow-y: auto;
 }

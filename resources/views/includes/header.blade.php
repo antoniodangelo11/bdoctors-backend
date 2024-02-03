@@ -1,6 +1,6 @@
 <header class="app-header">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
+    <nav class="navbar navbar-expand-md navbar-light bg-white py-0">
+        <div class="container-fluid">
 
             {{-- Brand --}}
             <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">

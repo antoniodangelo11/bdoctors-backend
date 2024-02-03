@@ -6,7 +6,7 @@
 
 .app-sidebar {
     flex: 0 0 $sidebar-width;
-    min-height: calc(100vh - $header-height);
+    height: calc(100vh - $header-height);
 
     background-color: red;
 

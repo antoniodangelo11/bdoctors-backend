@@ -40,7 +40,7 @@
             </nav>
 
             {{-- MAin content --}}
-            <main class="app-main">
+            <main class="app-main bg-light">
                 {{-- Main Header --}}
 
                 @yield('content')
