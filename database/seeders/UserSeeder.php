@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
             }
             if (!count($profile_typologies)) $profile_typologies[] = Arr::random($typologies_ids);
 
-            $doctor_profile->typologies()->attach(Arr::random($profile_typologies));
+            $doctor_profile->typologies()->attach($profile_typologies);
         }
     }
 }
