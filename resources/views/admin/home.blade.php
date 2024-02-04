@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container-fluid bg-light py-4">
+    <section class="container-fluid bg-light py-5 py-lg-4">
+
+        <h2 class="fs-4 text-secondary mb-4">
+            {{ __('Dashboard') }}
+        </h2>
 
         {{-- Content --}}
         <div class="row">
@@ -46,5 +50,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 @endsection

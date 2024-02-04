@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container py-4">
+    <section class="container py-5 py-lg-4">
 
         {{-- Content --}}
         <div class="row justify-content-center">
