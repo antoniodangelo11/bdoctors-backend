@@ -1,3 +1,7 @@
+{{-- Sidebar Overlay --}}
+<div class="app-sidebar-overlay"></div>
+
+{{-- Sidebar --}}
 <nav class="app-sidebar">
     <ul class="app-sidebar-menu">
 
@@ -21,3 +25,8 @@
 
     </ul>
 </nav>
+
+{{-- Sidebar Toggler --}}
+<button class="app-sidebar-toggler btn btn-primary">
+    <i class="fas fa-angle-right fa-xl"></i>
+</button>

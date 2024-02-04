@@ -52,6 +52,7 @@
     </div>
 
     {{-- Scripts --}}
+    @vite(['resources/js/commons/sidebar-toggling.js'])
     @yield('scripts')
 </body>
 
