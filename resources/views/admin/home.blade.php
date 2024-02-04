@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container bg-light py-4">
+    <section class="container-fluid bg-light py-5 py-lg-4">
+
+        <h2 class="fs-4 text-secondary mb-4">
+            {{ __('Dashboard') }}
+        </h2>
 
         {{-- Content --}}
         <div class="row">
 
             {{-- Main Column --}}
-            <div class="col-12 col-md-7 col-lg-9 mb-3">
+            <div class="col-12 mb-3">
                 <div class="card profile-card bg-white pb-3">
 
                     {{-- Profile Banner --}}
@@ -35,7 +39,7 @@
             </div>
 
             {{-- Details Column --}}
-            <div class="col-12 col-md-5 col-lg-3">
+            <div class="col-12">
                 <div class="card bg-white p-2">
                     <h4>Specializzazioni</h4>
                     <ul>
@@ -46,5 +50,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 @endsection
