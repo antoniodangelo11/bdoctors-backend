@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TypologySeeder::class,
             StarSeeder::class,
-            ReviewSeeder::class,
             UserSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }

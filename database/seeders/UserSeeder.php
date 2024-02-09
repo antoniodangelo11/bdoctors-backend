@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Profile;
+use App\Models\Star;
 use App\Models\Typology;
 use App\Models\User;
 use Faker\Generator;
@@ -22,6 +23,9 @@ class UserSeeder extends Seeder
     {
         // Retrieve typologies ids
         $typologies_ids = Typology::pluck('id')->toArray();
+
+        // Retrieve stars ids
+        $stars_ids = Star::pluck('id')->toArray();
 
         // Make profile photo directory
         Storage::makeDirectory('profile_img');
@@ -52,6 +56,16 @@ class UserSeeder extends Seeder
             if (!count($profile_typologies)) $profile_typologies[] = Arr::random($typologies_ids);
 
             $doctor_profile->typologies()->attach($profile_typologies);
+
+
+            // Add random doctor valutations
+            $profile_stars = [];
+            $stars_count = rand(0, 10);
+            for ($i = 0; $i < $stars_count; $i++) {
+                $profile_stars[] = Arr::random($stars_ids);
+            }
+
+            $doctor_profile->typologies()->attach($profile_stars);
         }
     }
 }
