@@ -36,6 +36,14 @@ class Profile extends Model
         return $this->belongsToMany(Typology::class);
     }
 
+    /**
+     * Stars Relation
+     */
+    public function stars()
+    {
+        return $this->belongsToMany(Star::class);
+    }
+
     //*** GETTERS ***//
     /**
      * Get Photo absolute path on API
