@@ -61,11 +61,11 @@ class UserSeeder extends Seeder
             // Add random doctor valutations
             $profile_stars = [];
             $stars_count = rand(0, 10);
-            for ($i = 0; $i < $stars_count; $i++) {
+            for ($j = 0; $j < $stars_count; $j++) {
                 $profile_stars[] = Arr::random($stars_ids);
             }
 
-            $doctor_profile->typologies()->attach($profile_stars);
+            $doctor_profile->stars()->attach($profile_stars);
         }
     }
 }
