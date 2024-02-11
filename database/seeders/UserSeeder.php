@@ -30,6 +30,9 @@ class UserSeeder extends Seeder
         // Make profile photo directory
         Storage::makeDirectory('profile_img');
 
+        // Get Photos Source Images
+        $photoSources = Storage::files('sources');
+
         for ($i = 1; $i < 10; $i++) {
 
             // Create Doctor
@@ -46,6 +49,16 @@ class UserSeeder extends Seeder
             $doctor_profile->description = $faker->sentence();
             $doctor_profile->services = $faker->words(rand(1, 5), true);
             $doctor_profile->address = 'Roma';
+
+            // Add a profile image
+            if ($i <= count($photoSources)) {
+
+                $src_url = Storage::path($photoSources[$i - 1]);
+                $photo_url = Storage::putFile('profile_img', $src_url);
+
+                $doctor_profile->photo = $photo_url;
+            }
+
             $doctor_profile->save();
 
             // Add doctor typologies (at least one)
