@@ -4,7 +4,7 @@ return [
     ["name" => "Chirurgia cardiaca", "icon" => "fas fa-heartbeat"],
     ["name" => "Chirurgia generale", "icon" => "fas fa-scissors"],
     ["name" => "Chirurgia ortopedica", "icon" => "fas fa-bone"],
-    ["name" => "Chirurgia plastica", "icon" => "fas fa-cut"],
+    ["name" => "Chirurgia plastica", "icon" => "fas fa-syringe"],
     ["name" => "Chirurgia vascolare", "icon" => "fas fa-ambulance"],
     ["name" => "Dermatologia", "icon" => "fas fa-spa"],
     ["name" => "Ematologia", "icon" => "fas fa-tint"],
