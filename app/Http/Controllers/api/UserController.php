@@ -33,6 +33,7 @@ class UserController extends Controller
         //*** GET DOCTORS WITH FILTERS ***//
         $query = Profile::with('user', 'typologies')
             ->withAvg('stars', 'vote')
+            ->withCount('stars')
             ->withCount('reviews');
 
 
