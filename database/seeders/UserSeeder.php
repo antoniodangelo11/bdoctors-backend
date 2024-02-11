@@ -31,13 +31,17 @@ class UserSeeder extends Seeder
         Storage::makeDirectory('profile_img');
 
         // Get Photos Source Images
-        $photoSources = Storage::files('sources');
+        $photoMalesSources = Storage::files('sources/profile_males');
+        $photoFemalesSources = Storage::files('sources/profile_females');
 
         for ($i = 1; $i < 10; $i++) {
 
+            // Choose gender
+            $gender = rand(0, 1) ? 'male' : 'female';
+
             // Create Doctor
             $doctor = new User();
-            $doctor->first_name = $faker->firstName();
+            $doctor->first_name = $faker->firstName($gender);
             $doctor->last_name = $faker->lastName();
             $doctor->email = "doctor$i@mail.it";
             $doctor->password = bcrypt('password');
@@ -50,12 +54,17 @@ class UserSeeder extends Seeder
             $doctor_profile->services = $faker->words(rand(1, 5), true);
             $doctor_profile->address = 'Roma';
 
-            // Add a profile image
-            if ($i <= count($photoSources)) {
+            // Add a profile image (66% chance)
+            if (rand(0, 2)) {
 
-                $src_url = Storage::path($photoSources[$i - 1]);
+                // Get source based on gender
+                $photoSources = $gender === 'male' ? $photoMalesSources : $photoFemalesSources;
+
+                // Choose a random photo
+                $src_url = Storage::path(Arr::random($photoSources));
                 $photo_url = Storage::putFile('profile_img', $src_url);
 
+                // Save photo url
                 $doctor_profile->photo = $photo_url;
             }
 
