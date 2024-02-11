@@ -18,6 +18,6 @@ return [
     ["name" => "Ortopedia", "icon" => "fas fa-wheelchair"],
     ["name" => "Otorinolaringoiatria", "icon" => "fas fa-ear"],
     ["name" => "Pediatria", "icon" => "fas fa-child"],
-    ["name" => "Psichiatria", "icon" => "fas fa-brain"],
+    ["name" => "Psichiatria", "icon" => "fas fa-user-md"],
     ["name" => "Radiologia", "icon" => "fas fa-x-ray"],
 ];
