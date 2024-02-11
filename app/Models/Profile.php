@@ -19,6 +19,7 @@ class Profile extends Model
         'user_id'
     ];
 
+
     //*** RELATIONS ***//
     /**
      * User Relation
@@ -43,6 +44,15 @@ class Profile extends Model
     {
         return $this->belongsToMany(Star::class);
     }
+
+    /**
+     * Reviews Relation
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 
     //*** GETTERS ***//
     /**

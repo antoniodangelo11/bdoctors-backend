@@ -10,4 +10,14 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = ['profile_id', 'first_name', 'last_name', 'email', 'text'];
+
+
+    //*** RELATIONS ***//
+    /**
+     * Profile Relation
+     */
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }
