@@ -24,6 +24,14 @@
 
                     {{-- Card Body --}}
                     <div class="profile-card-body px-3 mb-3">
+
+                        {{-- Avg Valutations --}}
+                        <div class="d-flex text-warning mb-3">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <i class="fa-star fa-lg @if ($doctor->profile->stars->avg('vote') >= $i) fas @else far @endif"></i>
+                            @endfor
+                        </div>
+
                         <h2>{{ $doctor->getFullName() }}</h2>
                         <p>{{ $doctor->profile->address }}</p>
                         <p>{{ $doctor->profile->description }}</p>
