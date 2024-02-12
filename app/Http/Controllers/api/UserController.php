@@ -4,7 +4,6 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Profile;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,8 +11,11 @@ class UserController extends Controller
     //
     public function index()
     {
-        $doctors = User::select('id', 'first_name', 'last_name')
-            ->with('profile', 'profile.typologies')
+        $doctors = Profile::with('user', 'typologies')
+            ->withAvg('stars', 'vote')
+            ->withCount('stars')
+            ->withCount('reviews')
+            ->orderBy('created_at')
             ->get();
 
         return response($doctors, 200);
@@ -31,6 +33,7 @@ class UserController extends Controller
         //*** GET DOCTORS WITH FILTERS ***//
         $query = Profile::with('user', 'typologies')
             ->withAvg('stars', 'vote')
+            ->withCount('stars')
             ->withCount('reviews');
 
 
